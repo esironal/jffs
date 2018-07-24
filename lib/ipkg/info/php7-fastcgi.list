@@ -1,0 +1,6 @@
+/
+/etc/
+/etc/config/
+/etc/config/php7-fastcgi
+/etc/init.d/
+/etc/init.d/php7-fastcgi

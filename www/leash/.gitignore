@@ -1,0 +1,12 @@
+*~
+.[0-9.]*
+.\#*
+\#*\#
+config.json
+/init.js
+tmp/*
+cgi-bin/*.pyc
+www
+lib/html2text
+lib/apps/jsvi
+debug.log

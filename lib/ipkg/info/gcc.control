@@ -1,0 +1,9 @@
+Package: gcc
+Version: 4.8.3-1
+Depends: libc, binutils, libstdcpp
+Source: feeds/packages/devel/gcc
+Section: devel
+Maintainer: Christian Beier <cb@shoutrlabs.com>
+Architecture: ar71xx
+Installed-Size: 21486577
+Description:  build a native toolchain for compiling on target

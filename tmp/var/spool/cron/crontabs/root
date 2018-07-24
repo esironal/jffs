@@ -1,0 +1,2 @@
+30 13 29 3 * sched sch_c1 #sch_c1#
+50 2,6,10,14,18,22 * * * ntpsync --cron #ntpsync#

@@ -1,0 +1,10 @@
+Package: cgi-io
+Version: 4
+Depends: libc, libubox, libubus
+Source: feeds/packages/net/cgi-io
+License: GPL-2.0+
+Section: net
+Maintainer: John Crispin <blogic@openwrt.org>
+Architecture: brcm47xx
+Installed-Size: 6347
+Description:  This package contains an cgi utility that is useful for up/downloading files

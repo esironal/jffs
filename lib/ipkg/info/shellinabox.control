@@ -1,0 +1,8 @@
+Package: shellinabox
+Version: 2.10-1
+Depends: libc, zlib
+Source: package/net/shellinabox
+Section: net
+Architecture: ar71xx
+Installed-Size: 93485
+Description:  Web based AJAX terminal emulator

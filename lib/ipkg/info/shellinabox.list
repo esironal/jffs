@@ -1,0 +1,10 @@
+/
+/usr/
+/usr/sbin/
+/usr/sbin/shellinaboxd
+/usr/lib/
+/usr/lib/shellinabox/
+/usr/lib/shellinabox/style.css
+/etc/
+/etc/init.d/
+/etc/init.d/shellinabox

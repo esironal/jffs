@@ -1,0 +1,11 @@
+Package: node
+Version: v4.4.5-1
+Depends: libc, libpthread, librt, libstdcpp, libopenssl, zlib
+Source: feeds/packages/lang/node
+Section: lang
+Maintainer: John Crispin <blogic@openwrt.org>
+Architecture: mipsel_74kc
+Installed-Size: 5367333
+Description:  Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses
+ an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js'
+ package ecosystem, npm, is the largest ecosystem of open source libraries in the world.

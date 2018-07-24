@@ -1,0 +1,112 @@
+/**@license
+ *  This file is part of Leash (Browser Shell)
+ *  Copyright (c) 2013-2018 Jakub Jankiewicz <http://jcubic.pl>
+ *
+ *  Released under the MIT license
+ *
+ */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black !important;
+  overflow: hidden;
+}
+.terminal {
+  font-weight: bold;
+}
+#micro {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  border: none;
+}
+#micro, #jsvi {
+  display: none;
+}
+.exec, .jargon {
+  cursor: pointer;
+}
+.exec:hover, .jargon:hover, .wiki:hover, .rfc:hover {
+  text-decoration: none !important;
+}
+body, html, #splash, #splash div { height: 100%; }
+#splash pre {
+    color: #aaa;
+    display: table-cell;
+    vertical-align: middle;
+
+    font-weight: bold;
+}
+#splash div {
+    margin: 0 auto;
+    display: table;
+}
+#splash span {
+    -webkit-animation: leash-loading 1s infinite steps(1, start);
+    -moz-animation: leash-loading 1s infinite steps(1, start);
+    -ms-animation: leash-loading 1s infinite steps(1, start);
+    animation: leash-loading 1s infinite steps(1, start);
+}
+@-webkit-keyframes leash-loading {
+    0%, 100% {
+        color: #aaa;
+    }
+    50% {
+        color: #000;
+    }
+}
+@-moz-keyframes leash-loading {
+    0%, 100% {
+        color: #aaa;
+    }
+    50% {
+        color: #000;
+    }
+}
+@-ms-keyframes leash-loading {
+    0%, 100% {
+        color: #aaa;
+    }
+    50% {
+        color: #000;
+    }
+}
+@keyframes leash-loading {
+    0%, 100% {
+        color: #aaa;
+    }
+    50% {
+        color: #000;
+    }
+}
+.DlDesktop { display: none; }
+.Ymacs-frame-content {
+    display: inline-block;
+    min-width: 100%;
+}
+.wiki, .rfc { cursor: pointer; }
+
+element.style {
+}
+.Ymacs-Theme-dark.Ymacs-Theme-y .Ymacs_Frame .builtin {
+    color: rgb(176, 196, 222);
+}
+/* bar cursor for ymacs */
+body .Ymacs-Theme-dark .Ymacs_Frame-focus .Ymacs-caret {
+    background: transparent !important;
+    color: inherit !important;
+}
+.Ymacs-caret {
+    position: relative;
+}
+.Ymacs-caret:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-left: 1px solid white;
+    bottom: 0;
+}

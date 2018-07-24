@@ -1,0 +1,140 @@
+
+
+udp dpts:10000:10100 
+
+
+
+
+mkdir /jffs/mmc
+chmod 0777 /jffs/mmc
+
+
+
+mount -t cifs //192.168.1.250/jffs /jffs -o user=root,pass=silver333,sec=none
+
+
+mount -t cifs //192.168.1.250/optware /opt -o user=root,pass=silver333,sec=none
+
+
+mount -O bind /jffs/mmc /mmc
+
+
+mkdir /jffs/opt
+mount -o bind /jffs/opt /opt
+
+
+wget http://www.3iii.dk/linux/optware/optware-install-ddwrt.sh -O - | tr -d '\r' > /tmp/optware-install.sh
+chmod +x /tmp/optware-install.sh
+sh /tmp/optware-install.sh
+
+
+
+
+cd /jffs/dl
+wget http://entware-3x.zyxmon.org/binaries/mipsel/installer/install_std.sh
+chmod +x install_std.sh
+sh install_std.sh
+
+
+git clone https://github.com/devttys0/sasquatch
+cd sasquatch
+chmod +x ./build.sh
+./build.sh
+
+
+https://cmake.org/files/v3.11/cmake-3.11.0-rc1-Linux-x86_64.sh
+
+curl -k https://cmake.org/files/v3.11/cmake-3.11.0-rc1-Linux-x86_64.sh | sh
+
+
+curl https://cmake.org/files/v3.11/cmake-3.11.0-rc1-Linux-x86_64.sh | sh
+
+
+
+
+
+
+
+mount -t cifs //192.168.1.250/jffs /jffs -o user=root,pass=silver333,sec=none
+mount -t cifs //192.168.1.250/optware /opt -o user=root,pass=silver333,sec=none
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+mount -t cifs //192.168.1.250/jffs /jffs -o user=root,pass=silver333,sec=none
+
+insmod /jffs/lib/mbcache.ko
+insmod /jffs/lib/ext2.ko
+insmod /jffs/lib/exportfs.ko
+
+
+mount -t cifs //192.168.1.250/optware /opt -o user=root,pass=silver333,sec=none
+
+
+
+
+
+wget http://www.3iii.dk/linux/optware/optware-install-ddwrt.sh -O - | tr -d '\r' > /tmp/optware-install.sh
+chmod +x /tmp/optware-install.sh
+sh /tmp/optware-install.sh
+
+
+
+tar -xvf /jffs/pac2/www.tar
+
+
+
+
+2pkg install lua mediatomb minihttpd nano squid3 ushare util-linux-ng slimserver ipkg-web lcd4linux less
+
+ipkg-web
+
+
+/opt/etc/init.d/
+
+
+
+
+http://ipkg.nslu2-linux.org/optware-ng/buildroot-mipsel-ng/Packages.gz
+
+
+2pkg install ffmpegthumbnailer gnet haserl icecast ices0 jshn libjson-c libjansson libjson-script node010 shell2http shellinabox
+
+
+
+tar -cvf /jffs/pac2/www.tar /www
+tar -cvf /jffs/pac2/tmp.tar /tmp
+tar -cvf /jffs/pac2/rom.tar /rom
+tar -cvf /jffs/pac2/usr.tar /usr
+tar -cvf /jffs/pac2/lib.tar /lib
+tar -cvf /jffs/pac2/rom.tar /rom
+tar -cvf /jffs/pac2/bin.tar /bin
+tar -cvf /jffs/pac2/sys.tar /sys
+tar -cvf /jffs/pac2/sbin.tar /sbin
+tar -cvf /jffs/pac2/proc.tar /proc
+tar -cvf /jffs/pac2/etc.tar etc
+
+
+
+ipkg install bash nano curl git ffmpegthumbnailer gnet haserl icecast ices0 jshn libjson-c libjansson libjson-script node shell2http shellinabox
+
+sudo chown 2000.2000 optware

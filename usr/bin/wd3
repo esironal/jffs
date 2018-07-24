@@ -1,0 +1,1 @@
+/jffs/sbin/httpd -p 8008 -h /jffs/www3

@@ -1,0 +1,33 @@
+*mangle
+:PREROUTING ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+-I FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu
+COMMIT
+*nat
+:PREROUTING ACCEPT [0:0]
+:POSTROUTING ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+:WANPREROUTING - [0:0]
+COMMIT
+*filter
+:INPUT DROP [0:0]
+:OUTPUT ACCEPT [0:0]
+:logdrop - [0:0]
+-A logdrop -m state --state NEW -m limit --limit 60/m -j LOG --log-prefix "DROP " --log-macdecode --log-tcp-sequence --log-tcp-options --log-ip-options
+-A logdrop -j DROP
+:logreject - [0:0]
+-A logreject -m limit --limit 60/m -j LOG --log-prefix "REJECT " --log-macdecode --log-tcp-sequence --log-tcp-options --log-ip-options
+-A logreject -p tcp -j REJECT --reject-with tcp-reset
+:logaccept - [0:0]
+-A logaccept -m state --state NEW -m limit --limit 60/m -j LOG --log-prefix "ACCEPT " --log-macdecode --log-tcp-sequence --log-tcp-options --log-ip-options
+-A logaccept -j ACCEPT
+-A INPUT -i br0 -d 23.125.1.202 -j DROP
+-A INPUT -m state --state INVALID -j DROP
+-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -i lo -j ACCEPT
+-A INPUT -i br0 -j ACCEPT
+-A INPUT -p tcp  --dport 2222 -j logaccept
+-A INPUT -p udp --dport 520 -j ACCEPT
+-A INPUT -j logdrop
+:FORWARD ACCEPT [0:0]
+COMMIT

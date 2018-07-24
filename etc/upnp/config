@@ -1,0 +1,26 @@
+ext_ifname=vlan2
+port=0
+enable_upnp=yes
+enable_natpmp=yes
+secure_mode=no
+upnp_forward_chain=upnp
+upnp_nat_chain=upnp
+upnp_nat_postrouting_chain=pupnp
+notify_interval=60
+system_uptime=yes
+friendly_name=TomatoUSB Router
+model_name=Linksys E1200 v2.0
+model_url=http://linksysinfo.org/index.php?forums/tomato-firmware.33/
+manufacturer_name=Tomato Firmware
+manufacturer_url=http://linksysinfo.org/index.php?forums/tomato-firmware.33/
+
+clean_ruleset_interval=600
+clean_ruleset_threshold=20
+presentation_url=http://192.168.1.1:80/forward-upnp.asp
+uuid=d6b73324-2da4-48e1-8189-5c43ca4bc8f7
+
+
+listening_ip=192.168.1.1/255.255.255.0
+allow 1024-65535 192.168.1.1/255.255.255.0 1024-65535
+
+allow 0-65535 0.0.0.0/0 0-65535

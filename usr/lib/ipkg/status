@@ -1,0 +1,47 @@
+Package: cmake
+Status: install ok installed
+Root: /
+Version: 3.10.2-1
+
+Package: libmagic
+Status: install ok installed
+Root: /
+Version: 5.25-2
+
+Package: libunistring
+Status: install ok installed
+Root: /
+Version: 0.9.4-2
+
+Package: lua-examples
+Status: install ok installed
+Root: /
+Version: 5.0.2-1
+
+Package: gcc
+Status: install ok installed
+Root: /
+Version: 7.2.0-7
+
+Package: libcurl
+Status: install ok installed
+Root: /
+Version: 7.58.0-2
+
+Package: openssl
+Status: install ok installed
+Root: /
+Conffiles: /opt/etc/ssl/openssl.cnf af9875fd88886ef44f7dec39277d155b
+Version: 1.0.2n-1
+
+Package: libintl-full
+Status: install ok installed
+Root: /
+Version: 0.19.8.1-1
+
+Package: ipkg-opt
+Status: install ok installed
+Root: /
+Conffiles: /opt/etc/ipkg.conf 6aa9e976cdac260cb3184dc0988f253d
+Version: 0.99.163-10
+

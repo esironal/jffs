@@ -1,0 +1,17 @@
+
+
+Package: memcached
+Status: install ok installed
+Root: /
+Version: 1.3.0-2
+
+Package: php7-fastcgi
+Status: install ok installed
+Root: /
+Version: 7.1.1-1
+
+Package: node
+Status: install ok installed
+Root: /
+Version: v4.4.5-1
+

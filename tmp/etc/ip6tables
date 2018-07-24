@@ -1,0 +1,48 @@
+*mangle
+:PREROUTING ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+-I FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu
+COMMIT
+*filter
+:INPUT DROP [0:0]
+:OUTPUT ACCEPT [0:0]
+:logdrop - [0:0]
+-A logdrop -m state --state NEW -m limit --limit 60/m -j LOG --log-prefix "DROP " --log-macdecode --log-tcp-sequence --log-tcp-options --log-ip-options
+-A logdrop -j DROP
+:logreject - [0:0]
+-A logreject -m limit --limit 60/m -j LOG --log-prefix "REJECT " --log-macdecode --log-tcp-sequence --log-tcp-options --log-ip-options
+-A logreject -p tcp -j REJECT --reject-with tcp-reset
+:logaccept - [0:0]
+-A logaccept -m state --state NEW -m limit --limit 60/m -j LOG --log-prefix "ACCEPT " --log-macdecode --log-tcp-sequence --log-tcp-options --log-ip-options
+-A logaccept -j ACCEPT
+-A INPUT -m rt --rt-type 0 -j logdrop
+-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -p ipv6-nonxt -m length --length 40 -j ACCEPT
+-A INPUT -i br0 -j ACCEPT
+-A INPUT -i lo -j ACCEPT
+-A INPUT -p ipv6-icmp --icmpv6-type 1 -j logaccept
+-A INPUT -p ipv6-icmp --icmpv6-type 2 -j logaccept
+-A INPUT -p ipv6-icmp --icmpv6-type 3 -j logaccept
+-A INPUT -p ipv6-icmp --icmpv6-type 4 -j logaccept
+-A INPUT -p ipv6-icmp --icmpv6-type 128 -j logaccept
+-A INPUT -p ipv6-icmp --icmpv6-type 129 -j logaccept
+-A INPUT -p ipv6-icmp --icmpv6-type 130 -j logaccept
+-A INPUT -p ipv6-icmp --icmpv6-type 131 -j logaccept
+-A INPUT -p ipv6-icmp --icmpv6-type 132 -j logaccept
+-A INPUT -p ipv6-icmp --icmpv6-type 133 -j logaccept
+-A INPUT -p ipv6-icmp --icmpv6-type 134 -j logaccept
+-A INPUT -p ipv6-icmp --icmpv6-type 135 -j logaccept
+-A INPUT -p ipv6-icmp --icmpv6-type 136 -j logaccept
+-A INPUT -p ipv6-icmp --icmpv6-type 141 -j logaccept
+-A INPUT -p ipv6-icmp --icmpv6-type 142 -j logaccept
+-A INPUT -p ipv6-icmp --icmpv6-type 143 -j logaccept
+-A INPUT -p ipv6-icmp --icmpv6-type 148 -j logaccept
+-A INPUT -p ipv6-icmp --icmpv6-type 149 -j logaccept
+-A INPUT -p ipv6-icmp --icmpv6-type 151 -j logaccept
+-A INPUT -p ipv6-icmp --icmpv6-type 152 -j logaccept
+-A INPUT -p ipv6-icmp --icmpv6-type 153 -j logaccept
+-A INPUT -p tcp  --dport 2222 -j logaccept
+-A INPUT -j logdrop
+-A OUTPUT -m rt --rt-type 0 -j logdrop
+:FORWARD ACCEPT [0:0]
+COMMIT

@@ -1,0 +1,40 @@
+export PATH="/opt/sbin:/opt/bin:/opt/usr/sbin:/opt/usr/bin:/jffs/usr/bin:/jffs/usr/sbin:/jffs/bin:/jffs/sbin:/bin:/usr/bin:/sbin:/usr/sbin:/home/$USER:/mmc/sbin:/mmc/bin:/mmc/usr/sbin:/mmc/usr/bin:`nvram get env_path`"
+export PS1='\u@\h:\w\$'
+export GOPATH='/opt/go'
+export GOBIN='/opt/go/bin'
+export CURL_CA_BUNDLE="/opt/etc/ssl/certs/cacert.pem"
+
+
+alias l='ls -lFA'
+alias ll='ls -lF'
+alias get='opkg install $1'
+alias give='opkg remove $1'
+alias tx='tar xzvf $1'
+alias tc='tar cvf $1'
+alias mkx='chmod 0755 $1'
+alias got='opkg list_installed'
+alias gc='git clone $1'
+alias dl='curl -kLO $1'
+#alias al='cmd'
+#alias al='cmd'
+#alias al='cmd'
+#alias al='cmd'
+#alias al='cmd'
+#alias al='cmd'
+#alias al='cmd'
+#alias al='cmd'
+#alias al='cmd'
+#alias al='cmd'
+#alias al='cmd'
+#alias al='cmd'
+
+
+
+
+
+
+
+ldd() {
+        LD_TRACE_LOADED_OBJECTS=1 $*;
+}
+	
